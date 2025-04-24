@@ -17,7 +17,7 @@ To quickly get hands on this project, follow these steps:
 Make sure that Docker is insalled by running:
 
 ```bash
-docker --version
+$ docker --version
 ```
 If not installed, follow the instructions at the [official Docker site](https://docs.docker.com/desktop/).
 
@@ -43,14 +43,17 @@ $ docker run -it --rm -p 8025:8025 baby_tools_shop:demo
 
 # `-it`  runs the container in interactive mode with a terminal
 # `--rm` removes the container automatically after stopped
-# `-p`   maps the port inside the container to the port on your local machine 
+# `-p`   maps the chosen port inside the container to the chosen port on your local machine 
 #        following this syntax <container_port>:<local_machine_port>
 ```
 If the command is successful, the container is now running and the app within is accessible by navigating to [`http://localhost:8025`](http://localhost:8025) or [`http://127.0.0.1:8025`](http://127.0.0.1:8025)
 
 > [!CAUTION]
-> If you're running this on a remote server, there are more tweaks to apply, especially what concerns [security](#additional-informations) and sensible data.
-> For quick testing purposes you can either add (before building the image) your server's IP address to `ALLOWED_HOST` in `settings.py` (to avoid `Invalid HTTP_HOST header` errors) or manage it with [environment variables](#hints).
+> If you're running this on a remote server, there are more tweaks to apply, especially what concerns [security](#additional-informations) and sensible data.  
+
+> For quick testing purposes you can:
+> - either add (before building the image) your server's IP address to `ALLOWED_HOST` in `settings.py` (to avoid `Invalid HTTP_HOST header` errors) 
+> - or manage it with [environment variables](#hints)
 > Afterwards you should be able to visit the app at `http://<server_ip_address>:8025`.
 
 ## Technologies
