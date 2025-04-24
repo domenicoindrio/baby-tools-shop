@@ -48,13 +48,17 @@ $ docker run -it --rm -p 8025:8025 baby_tools_shop:demo
 ```
 If the command is successful, the container is now running and the app within is accessible by navigating to [`http://localhost:8025`](http://localhost:8025) or [`http://127.0.0.1:8025`](http://127.0.0.1:8025)
 
+> [!NOTE]
+> First time testing this app, the categories and products are gonna be [empty](#home-page-with-no-categories-and-products-empty-database). In order to be able to add those, create a [superuser](https://docs.djangoproject.com/en/5.2/topics/auth/default/#:~:text=createsuperuser%20command%3A) in Django, navigate to [`http://localhost:8025/admin`](http://localhost:8025/admin), login as such and add them manually as you like.
+
+
 > [!CAUTION]
 > If you're running this on a remote server, there are more tweaks to apply, especially what concerns [security](#additional-informations) and sensible data.  
-
 > For quick testing purposes you can:
 > - either add (before building the image) your server's IP address to `ALLOWED_HOST` in `settings.py` (to avoid `Invalid HTTP_HOST header` errors) 
 > - or manage it with [environment variables](#hints)
 > Afterwards you should be able to visit the app at `http://<server_ip_address>:8025`.
+
 
 ## Technologies
 
@@ -72,12 +76,11 @@ This section will cover some useful tips when trying to interacting with this re
 - All the required libraries are listed in [`requirements.txt`](./requirements.txt)
 - Docker build instructions are defined in the [`Dockerfile`](./Dockerfile)
 - Excluding files from the Docker image is done with a .dockerignore file (similar to a .gitignore)
-- Environment variables can be put in a `.env` file and can be referred to it while running the container, for ex.:
+- `Environment variables` can be put in a `.env` file and can be referred to it while running the container, for ex.:
     ```bash
     $ docker run --env-file .env -it --rm -p 8025:8025 baby_tools_shop:demo
     ```
 - For local testing with Django, before creating a container, a python `venv` proves useful (optionally `pyenv` for managing multiple Python versions)
-- First time testing this app, the categories and products are gonna be [empty](#home-page-with-no-categories-and-products-empty-database). In order to be able to add those, create a [superuser](https://docs.djangoproject.com/en/5.2/topics/auth/default/#:~:text=createsuperuser%20command%3A) in Django, navigate to [`http://localhost:8025/admin`](http://localhost:8025/admin), login as such and add them manually as you like.
 
 ## Docker useful commands
 
