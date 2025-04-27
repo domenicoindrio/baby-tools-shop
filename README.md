@@ -59,7 +59,8 @@ If the command is successful, the container is now running and the app within is
 > If you're running this on a remote server, there are more tweaks to apply, especially what concerns [security](#additional-informations) and sensible data.  
 > For quick testing purposes you can:
 > - either add (before building the image) your server's IP address to `ALLOWED_HOST` in `settings.py` (to avoid `Invalid HTTP_HOST header` errors) 
-> - or manage it with [environment variables](#hints)  
+> - or manage it with [environment variables](#hints)
+>
 > Afterwards you should be able to visit the app at `http://<server_ip_address>:8025`.
 
 
