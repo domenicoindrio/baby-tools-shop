@@ -1,5 +1,8 @@
 # E-Commerce Project For Baby Tools
 
+This repository contains the code for an e-coomerce platform built with Django and Python for selling baby tools. It has features like products catalog, user registration and an admin panel.
+The project is containerized using Docker.
+
 ## Table of Contents
 
 1. [Quickstart](#quickstart)
@@ -44,7 +47,7 @@ $ docker run -it --rm -p 8025:8025 baby_tools_shop:demo
 # `-it`  runs the container in interactive mode with a terminal
 # `--rm` removes the container automatically after stopped
 # `-p`   maps the chosen port inside the container to the chosen port on your local machine 
-#        following this syntax <container_port>:<local_machine_port>
+#        following this syntax <local_machine_port>:<container_port>
 ```
 If the command is successful, the container is now running and the app within is accessible by navigating to [`http://localhost:8025`](http://localhost:8025) or [`http://127.0.0.1:8025`](http://127.0.0.1:8025)
 
@@ -94,12 +97,25 @@ $ docker ps -a
 
 $ docker exec -it <container_name_or_id> /bin/bash
 # opens a shell in a running container
+
+$ docker stop <container_name_or_id>
+# stops the indicated running container 
+
+$ docker logs -f <container_name_or_id>
+# shows real time logs of the indicated running container
 ```
+> [!NOTE]
+> Image name and Container name are different:   
+> - **Image name** is specified with the command `docker build` and refers to the Docker image that functions as a blueprint for creating and running containers. 
+> - **Container name** is the name automatically given from Docker to a running instance of the image. This name differs from the image name but can be specified manually through `--name <chosen_container_name>`, for example:
+>   ```bash
+>   $ docker run --name baby_shop_container -it --rm -p 8025:8025 baby_tools_shop:demo
+>   ```
 
 ## Additional informations
 
 - This project uses Django development server, which is not recommended for production.
-    - For more detailed informations about configurations, security, and settings for Django, please refer to the official [Django documentation](https://docs.djangoproject.com/en/5.2/).
+- For more detailed informations about configurations, security, and settings for Django, please refer to the official [Django documentation](https://docs.djangoproject.com/en/5.2/).
 
 ## Screenshots
 
