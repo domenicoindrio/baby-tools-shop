@@ -1,0 +1,8 @@
+env/
+project_images/
+*.pyc
+__pycache__
+*.sqlite3
+*.db
+*.log
+*.bak
