@@ -3,6 +3,8 @@
 This repository contains the code for an e-commerce platform built with Django and Python for selling baby tools. It has features like products catalog, user registration and an admin panel.
 The project is containerized using Docker.
 
+This repository was created during my training at the *Developer Academy*.
+
 ## Table of Contents
 
 1. [Quickstart](#quickstart)
